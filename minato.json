@@ -1,0 +1,12 @@
+{
+  "owners": [
+    "jfalcou"
+  ],
+  "images": [
+    "ghcr.io/jfalcou/compilers"
+  ],
+  "matrices": {
+    "files": "**/.github/matrices/*.yml",
+    "registry": "ghcr.io/jfalcou/compilers"
+  }
+}

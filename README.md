@@ -7,6 +7,18 @@ libraries as a set. It holds:
 - **Pin updates**: a weekly pass that keeps the libraries current with each other.
 - **minato-sendo**: the bot that opens the pull requests of minato.
 
+## Library list
+
+Each library minato follows has a folder in `libraries/`:
+
+- `library.json`: the repository of the library, and whether minato opens pull requests there.
+- `holds.json`, where needed: the pins the library keeps fixed, each with its reason.
+- `pins.json`, written by minato: every pin of the library, the newest version it can take, and
+  the pull request that moves it.
+
+`minato.json` names the owners whose repositories count as libraries, and the images whose tags
+count as pins.
+
 ## Pin updates
 
 The libraries depend on each other. A library fetches TTS and EVE when it builds, calls the CI
