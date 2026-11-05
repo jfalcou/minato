@@ -1,0 +1,225 @@
+{
+ "pull": null,
+ "pins": [
+  {
+   "kind": "matrix",
+   "file": ".github/matrices/linux-no-pch.yml",
+   "line": 10,
+   "source": "ghcr.io/jfalcou/compilers",
+   "form": "tag",
+   "current": "v11",
+   "latest": "v11",
+   "status": "current"
+  },
+  {
+   "kind": "matrix",
+   "file": ".github/matrices/linux.yml",
+   "line": 8,
+   "source": "ghcr.io/jfalcou/compilers",
+   "form": "tag",
+   "current": "v11",
+   "latest": "v11",
+   "status": "current"
+  },
+  {
+   "kind": "image",
+   "file": ".github/workflows/benchmarks.yml",
+   "line": 24,
+   "source": "ghcr.io/jfalcou/compilers",
+   "form": "tag",
+   "current": "v11",
+   "latest": "v11",
+   "status": "current"
+  },
+  {
+   "kind": "uses",
+   "file": ".github/workflows/benchmarks.yml",
+   "line": 38,
+   "source": "jfalcou/copacabana",
+   "form": "branch",
+   "current": "main",
+   "latest": "main",
+   "status": "fixed"
+  },
+  {
+   "kind": "uses",
+   "file": ".github/workflows/ci.yml",
+   "line": 30,
+   "source": "jfalcou/copacabana",
+   "form": "branch",
+   "current": "main",
+   "latest": "main",
+   "status": "fixed"
+  },
+  {
+   "kind": "uses",
+   "file": ".github/workflows/ci.yml",
+   "line": 38,
+   "source": "jfalcou/copacabana",
+   "form": "branch",
+   "current": "main",
+   "latest": "main",
+   "status": "fixed"
+  },
+  {
+   "kind": "uses",
+   "file": ".github/workflows/ci.yml",
+   "line": 45,
+   "source": "jfalcou/copacabana",
+   "form": "branch",
+   "current": "main",
+   "latest": "main",
+   "status": "fixed"
+  },
+  {
+   "kind": "uses",
+   "file": ".github/workflows/ci.yml",
+   "line": 52,
+   "source": "jfalcou/copacabana",
+   "form": "branch",
+   "current": "main",
+   "latest": "main",
+   "status": "fixed"
+  },
+  {
+   "kind": "uses",
+   "file": ".github/workflows/ci.yml",
+   "line": 61,
+   "source": "jfalcou/copacabana",
+   "form": "branch",
+   "current": "main",
+   "latest": "main",
+   "status": "fixed"
+  },
+  {
+   "kind": "image",
+   "file": ".github/workflows/ci.yml",
+   "line": 65,
+   "source": "ghcr.io/jfalcou/compilers",
+   "form": "tag",
+   "current": "v11",
+   "latest": "v11",
+   "status": "current"
+  },
+  {
+   "kind": "uses",
+   "file": ".github/workflows/ci.yml",
+   "line": 72,
+   "source": "jfalcou/copacabana",
+   "form": "branch",
+   "current": "main",
+   "latest": "main",
+   "status": "fixed"
+  },
+  {
+   "kind": "image",
+   "file": ".github/workflows/ci.yml",
+   "line": 76,
+   "source": "ghcr.io/jfalcou/compilers",
+   "form": "tag",
+   "current": "v11",
+   "latest": "v11",
+   "status": "current"
+  },
+  {
+   "kind": "uses",
+   "file": ".github/workflows/compile-cost.yml",
+   "line": 27,
+   "source": "jfalcou/copacabana",
+   "form": "branch",
+   "current": "main",
+   "latest": "main",
+   "status": "fixed"
+  },
+  {
+   "kind": "image",
+   "file": ".github/workflows/compile-cost.yml",
+   "line": 31,
+   "source": "ghcr.io/jfalcou/compilers",
+   "form": "tag",
+   "current": "v11",
+   "latest": "v11",
+   "status": "current"
+  },
+  {
+   "kind": "uses",
+   "file": ".github/workflows/documentation.yml",
+   "line": 20,
+   "source": "jfalcou/copacabana",
+   "form": "branch",
+   "current": "main",
+   "latest": "main",
+   "status": "fixed"
+  },
+  {
+   "kind": "image",
+   "file": ".github/workflows/documentation.yml",
+   "line": 24,
+   "source": "ghcr.io/jfalcou/compilers",
+   "form": "tag",
+   "current": "v11",
+   "latest": "v11",
+   "status": "current"
+  },
+  {
+   "kind": "uses",
+   "file": ".github/workflows/integration.yml",
+   "line": 18,
+   "source": "jfalcou/copacabana",
+   "form": "branch",
+   "current": "main",
+   "latest": "main",
+   "status": "fixed"
+  },
+  {
+   "kind": "image",
+   "file": ".github/workflows/integration.yml",
+   "line": 22,
+   "source": "ghcr.io/jfalcou/compilers",
+   "form": "tag",
+   "current": "v11",
+   "latest": "v11",
+   "status": "current"
+  },
+  {
+   "kind": "cpm",
+   "file": "cmake/dependencies.cmake",
+   "line": 20,
+   "source": "jfalcou/copacabana",
+   "form": "sha",
+   "current": "cc2bc58c53c64c7cc47b611fee219b0cefa27d43",
+   "latest": "0242be901ffd6fed6cece0e44d1b3c4385e7e38d",
+   "status": "behind"
+  },
+  {
+   "kind": "cpm",
+   "file": "cmake/dependencies.cmake",
+   "line": 23,
+   "source": "jfalcou/tts",
+   "form": "sha",
+   "current": "d0ee3e83481ba048dc054d5fc66158d4b980c928",
+   "latest": "acfc395eff6c849164c81086b5dc9ca4b8a68274",
+   "status": "behind"
+  },
+  {
+   "kind": "cpm",
+   "file": "cmake/dependencies.cmake",
+   "line": 30,
+   "source": "jfalcou/eve",
+   "form": "sha",
+   "current": "829b03d99890d91adeda27c7193268f019b55679",
+   "latest": "021bf0ef9d5301a21c565db0974c90430051cba4",
+   "status": "behind"
+  },
+  {
+   "kind": "cpm",
+   "file": "test/integration/cpm-test/CMakeLists.txt",
+   "line": 18,
+   "source": "jfalcou/kyosu",
+   "form": "variable",
+   "current": "${GIT_BRANCH}",
+   "latest": "${GIT_BRANCH}",
+   "status": "fixed"
+  }
+ ]
+}

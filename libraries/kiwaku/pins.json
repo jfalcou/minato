@@ -1,0 +1,125 @@
+{
+ "pull": null,
+ "pins": [
+  {
+   "kind": "image",
+   "file": ".github/workflows/documentation.yml",
+   "line": 16,
+   "source": "ghcr.io/jfalcou/compilers",
+   "form": "tag",
+   "current": "v9",
+   "latest": "v11",
+   "status": "behind"
+  },
+  {
+   "kind": "image",
+   "file": ".github/workflows/integration.yml",
+   "line": 21,
+   "source": "ghcr.io/jfalcou/compilers",
+   "form": "tag",
+   "current": "v9",
+   "latest": "v11",
+   "status": "behind"
+  },
+  {
+   "kind": "image",
+   "file": ".github/workflows/integration.yml",
+   "line": 44,
+   "source": "ghcr.io/jfalcou/compilers",
+   "form": "tag",
+   "current": "v9",
+   "latest": "v11",
+   "status": "behind"
+  },
+  {
+   "kind": "image",
+   "file": ".github/workflows/integration.yml",
+   "line": 63,
+   "source": "ghcr.io/jfalcou/compilers",
+   "form": "tag",
+   "current": "v9",
+   "latest": "v11",
+   "status": "behind"
+  },
+  {
+   "kind": "image",
+   "file": ".github/workflows/unit.yml",
+   "line": 20,
+   "source": "ghcr.io/jfalcou/compilers",
+   "form": "tag",
+   "current": "v9",
+   "latest": "v11",
+   "status": "behind"
+  },
+  {
+   "kind": "image",
+   "file": ".github/workflows/unit.yml",
+   "line": 44,
+   "source": "ghcr.io/jfalcou/compilers",
+   "form": "tag",
+   "current": "v9",
+   "latest": "v11",
+   "status": "behind"
+  },
+  {
+   "kind": "cpm",
+   "file": "cmake/dependencies.cmake",
+   "line": 33,
+   "source": "jfalcou/copacabana",
+   "form": "branch",
+   "current": "main",
+   "latest": "main",
+   "status": "fixed"
+  },
+  {
+   "kind": "cpm",
+   "file": "cmake/dependencies.cmake",
+   "line": 37,
+   "source": "jfalcou/tts",
+   "form": "branch",
+   "current": "main",
+   "latest": "main",
+   "status": "fixed"
+  },
+  {
+   "kind": "cpm",
+   "file": "cmake/dependencies.cmake",
+   "line": 45,
+   "source": "jfalcou/kumi",
+   "form": "branch",
+   "current": "main",
+   "latest": "main",
+   "status": "fixed"
+  },
+  {
+   "kind": "cpm",
+   "file": "cmake/dependencies.cmake",
+   "line": 52,
+   "source": "jfalcou/raberu",
+   "form": "branch",
+   "current": "main",
+   "latest": "main",
+   "status": "fixed"
+  },
+  {
+   "kind": "cpm",
+   "file": "cmake/dependencies.cmake",
+   "line": 59,
+   "source": "jfalcou/eve",
+   "form": "branch",
+   "current": "main",
+   "latest": "main",
+   "status": "fixed"
+  },
+  {
+   "kind": "cpm",
+   "file": "test/integration/cpm-test/CMakeLists.txt",
+   "line": 40,
+   "source": "jfalcou/kiwaku",
+   "form": "variable",
+   "current": "${GIT_BRANCH}",
+   "latest": "${GIT_BRANCH}",
+   "status": "fixed"
+  }
+ ]
+}

@@ -1,0 +1,125 @@
+{
+ "pull": null,
+ "pins": [
+  {
+   "kind": "matrix",
+   "file": ".github/matrices/linux.yml",
+   "line": 8,
+   "source": "ghcr.io/jfalcou/compilers",
+   "form": "tag",
+   "current": "v10",
+   "latest": "v11",
+   "status": "behind"
+  },
+  {
+   "kind": "uses",
+   "file": ".github/workflows/ci.yml",
+   "line": 31,
+   "source": "jfalcou/copacabana",
+   "form": "branch",
+   "current": "main",
+   "latest": "main",
+   "status": "fixed"
+  },
+  {
+   "kind": "uses",
+   "file": ".github/workflows/ci.yml",
+   "line": 38,
+   "source": "jfalcou/copacabana",
+   "form": "branch",
+   "current": "main",
+   "latest": "main",
+   "status": "fixed"
+  },
+  {
+   "kind": "uses",
+   "file": ".github/workflows/ci.yml",
+   "line": 45,
+   "source": "jfalcou/copacabana",
+   "form": "branch",
+   "current": "main",
+   "latest": "main",
+   "status": "fixed"
+  },
+  {
+   "kind": "uses",
+   "file": ".github/workflows/ci.yml",
+   "line": 55,
+   "source": "jfalcou/copacabana",
+   "form": "branch",
+   "current": "main",
+   "latest": "main",
+   "status": "fixed"
+  },
+  {
+   "kind": "uses",
+   "file": ".github/workflows/ci.yml",
+   "line": 62,
+   "source": "jfalcou/copacabana",
+   "form": "branch",
+   "current": "main",
+   "latest": "main",
+   "status": "fixed"
+  },
+  {
+   "kind": "uses",
+   "file": ".github/workflows/compile-cost.yml",
+   "line": 27,
+   "source": "jfalcou/copacabana",
+   "form": "branch",
+   "current": "main",
+   "latest": "main",
+   "status": "fixed"
+  },
+  {
+   "kind": "uses",
+   "file": ".github/workflows/documentation.yml",
+   "line": 20,
+   "source": "jfalcou/copacabana",
+   "form": "branch",
+   "current": "main",
+   "latest": "main",
+   "status": "fixed"
+  },
+  {
+   "kind": "uses",
+   "file": ".github/workflows/integration.yml",
+   "line": 18,
+   "source": "jfalcou/copacabana",
+   "form": "branch",
+   "current": "main",
+   "latest": "main",
+   "status": "fixed"
+  },
+  {
+   "kind": "cpm",
+   "file": "cmake/dependencies.cmake",
+   "line": 18,
+   "source": "jfalcou/copacabana",
+   "form": "branch",
+   "current": "main",
+   "latest": "main",
+   "status": "fixed"
+  },
+  {
+   "kind": "cpm",
+   "file": "cmake/dependencies.cmake",
+   "line": 22,
+   "source": "jfalcou/eve",
+   "form": "branch",
+   "current": "main",
+   "latest": "main",
+   "status": "fixed"
+  },
+  {
+   "kind": "cpm",
+   "file": "cmake/dependencies.cmake",
+   "line": 30,
+   "source": "jfalcou/tts",
+   "form": "branch",
+   "current": "main",
+   "latest": "main",
+   "status": "fixed"
+  }
+ ]
+}

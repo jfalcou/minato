@@ -1,0 +1,325 @@
+{
+ "pull": null,
+ "pins": [
+  {
+   "kind": "matrix",
+   "file": ".github/matrices/linux.yml",
+   "line": 8,
+   "source": "ghcr.io/jfalcou/compilers",
+   "form": "tag",
+   "current": "v11",
+   "latest": "v11",
+   "status": "current"
+  },
+  {
+   "kind": "image",
+   "file": ".github/workflows/compile-cost.yml",
+   "line": 51,
+   "source": "ghcr.io/jfalcou/compilers",
+   "form": "tag",
+   "current": "v10",
+   "latest": "v11",
+   "status": "behind"
+  },
+  {
+   "kind": "image",
+   "file": ".github/workflows/coverage.yml",
+   "line": 26,
+   "source": "ghcr.io/jfalcou/compilers",
+   "form": "tag",
+   "current": "v10",
+   "latest": "v11",
+   "status": "behind"
+  },
+  {
+   "kind": "image",
+   "file": ".github/workflows/documentation.yml",
+   "line": 29,
+   "source": "ghcr.io/jfalcou/compilers",
+   "form": "tag",
+   "current": "v10",
+   "latest": "v11",
+   "status": "behind"
+  },
+  {
+   "kind": "image",
+   "file": ".github/workflows/integration.yml",
+   "line": 26,
+   "source": "ghcr.io/jfalcou/compilers",
+   "form": "tag",
+   "current": "v10",
+   "latest": "v11",
+   "status": "behind"
+  },
+  {
+   "kind": "image",
+   "file": ".github/workflows/package-standalone.yml",
+   "line": 26,
+   "source": "ghcr.io/jfalcou/compilers",
+   "form": "tag",
+   "current": "v10",
+   "latest": "v11",
+   "status": "behind"
+  },
+  {
+   "kind": "image",
+   "file": ".github/workflows/sanitizers.yml",
+   "line": 22,
+   "source": "ghcr.io/jfalcou/compilers",
+   "form": "tag",
+   "current": "v10",
+   "latest": "v11",
+   "status": "behind"
+  },
+  {
+   "kind": "image",
+   "file": ".github/workflows/unit.yml",
+   "line": 76,
+   "source": "ghcr.io/jfalcou/compilers",
+   "form": "tag",
+   "current": "v11",
+   "latest": "v11",
+   "status": "current"
+  },
+  {
+   "kind": "image",
+   "file": ".github/workflows/unit.yml",
+   "line": 92,
+   "source": "ghcr.io/jfalcou/compilers",
+   "form": "tag",
+   "current": "v11",
+   "latest": "v11",
+   "status": "current"
+  },
+  {
+   "kind": "cpm",
+   "file": "test/example/cmake/dependencies.cmake",
+   "line": 16,
+   "source": "jfalcou/copacabana",
+   "form": "branch",
+   "current": "main",
+   "latest": "main",
+   "status": "fixed"
+  },
+  {
+   "kind": "matrix",
+   "file": "tools/template/.github/matrices/linux.yml",
+   "line": 11,
+   "source": "ghcr.io/jfalcou/compilers",
+   "form": "tag",
+   "current": "v11",
+   "latest": "v11",
+   "status": "current"
+  },
+  {
+   "kind": "matrix",
+   "file": "tools/template/.github/matrices/linux.yml",
+   "line": 12,
+   "source": "ghcr.io/jfalcou/compilers",
+   "form": "tag",
+   "current": "v11",
+   "latest": "v11",
+   "status": "current"
+  },
+  {
+   "kind": "matrix",
+   "file": "tools/template/.github/matrices/linux.yml",
+   "line": 13,
+   "source": "ghcr.io/jfalcou/compilers",
+   "form": "tag",
+   "current": "v11",
+   "latest": "v11",
+   "status": "current"
+  },
+  {
+   "kind": "matrix",
+   "file": "tools/template/.github/matrices/linux.yml",
+   "line": 14,
+   "source": "ghcr.io/jfalcou/compilers",
+   "form": "tag",
+   "current": "v11",
+   "latest": "v11",
+   "status": "current"
+  },
+  {
+   "kind": "matrix",
+   "file": "tools/template/.github/matrices/linux.yml",
+   "line": 15,
+   "source": "ghcr.io/jfalcou/compilers",
+   "form": "tag",
+   "current": "v11",
+   "latest": "v11",
+   "status": "current"
+  },
+  {
+   "kind": "matrix",
+   "file": "tools/template/.github/matrices/linux.yml",
+   "line": 16,
+   "source": "ghcr.io/jfalcou/compilers",
+   "form": "tag",
+   "current": "v11",
+   "latest": "v11",
+   "status": "current"
+  },
+  {
+   "kind": "matrix",
+   "file": "tools/template/.github/matrices/linux.yml",
+   "line": 17,
+   "source": "ghcr.io/jfalcou/compilers",
+   "form": "tag",
+   "current": "v11",
+   "latest": "v11",
+   "status": "current"
+  },
+  {
+   "kind": "matrix",
+   "file": "tools/template/.github/matrices/linux.yml",
+   "line": 18,
+   "source": "ghcr.io/jfalcou/compilers",
+   "form": "tag",
+   "current": "v11",
+   "latest": "v11",
+   "status": "current"
+  },
+  {
+   "kind": "matrix",
+   "file": "tools/template/.github/matrices/linux.yml",
+   "line": 19,
+   "source": "ghcr.io/jfalcou/compilers",
+   "form": "tag",
+   "current": "sycl-v1",
+   "latest": "sycl-v1",
+   "status": "current"
+  },
+  {
+   "kind": "matrix",
+   "file": "tools/template/.github/matrices/linux.yml",
+   "line": 20,
+   "source": "ghcr.io/jfalcou/compilers",
+   "form": "tag",
+   "current": "sycl-v1",
+   "latest": "sycl-v1",
+   "status": "current"
+  },
+  {
+   "kind": "uses",
+   "file": "tools/template/.github/workflows/ci.yml",
+   "line": 24,
+   "source": "jfalcou/copacabana",
+   "form": "branch",
+   "current": "main",
+   "latest": "main",
+   "status": "fixed"
+  },
+  {
+   "kind": "image",
+   "file": "tools/template/.github/workflows/ci.yml",
+   "line": 34,
+   "source": "ghcr.io/jfalcou/compilers",
+   "form": "tag",
+   "current": "v11",
+   "latest": "v11",
+   "status": "current"
+  },
+  {
+   "kind": "uses",
+   "file": "tools/template/.github/workflows/ci.yml",
+   "line": 55,
+   "source": "jfalcou/copacabana",
+   "form": "branch",
+   "current": "main",
+   "latest": "main",
+   "status": "fixed"
+  },
+  {
+   "kind": "uses",
+   "file": "tools/template/.github/workflows/ci.yml",
+   "line": 62,
+   "source": "jfalcou/copacabana",
+   "form": "branch",
+   "current": "main",
+   "latest": "main",
+   "status": "fixed"
+  },
+  {
+   "kind": "uses",
+   "file": "tools/template/.github/workflows/ci.yml",
+   "line": 72,
+   "source": "jfalcou/copacabana",
+   "form": "branch",
+   "current": "main",
+   "latest": "main",
+   "status": "fixed"
+  },
+  {
+   "kind": "uses",
+   "file": "tools/template/.github/workflows/ci.yml",
+   "line": 79,
+   "source": "jfalcou/copacabana",
+   "form": "branch",
+   "current": "main",
+   "latest": "main",
+   "status": "fixed"
+  },
+  {
+   "kind": "uses",
+   "file": "tools/template/.github/workflows/ci.yml",
+   "line": 86,
+   "source": "jfalcou/copacabana",
+   "form": "branch",
+   "current": "main",
+   "latest": "main",
+   "status": "fixed"
+  },
+  {
+   "kind": "uses",
+   "file": "tools/template/.github/workflows/documentation.yml",
+   "line": 20,
+   "source": "jfalcou/copacabana",
+   "form": "branch",
+   "current": "main",
+   "latest": "main",
+   "status": "fixed"
+  },
+  {
+   "kind": "uses",
+   "file": "tools/template/.github/workflows/integration.yml",
+   "line": 18,
+   "source": "jfalcou/copacabana",
+   "form": "branch",
+   "current": "main",
+   "latest": "main",
+   "status": "fixed"
+  },
+  {
+   "kind": "uses",
+   "file": "tools/template/.github/workflows/standalone.yml",
+   "line": 18,
+   "source": "jfalcou/copacabana",
+   "form": "branch",
+   "current": "main",
+   "latest": "main",
+   "status": "fixed"
+  },
+  {
+   "kind": "image",
+   "file": "tools/template/.gitlab-ci.yml",
+   "line": 11,
+   "source": "ghcr.io/jfalcou/compilers",
+   "form": "tag",
+   "current": "v11",
+   "latest": "v11",
+   "status": "current"
+  },
+  {
+   "kind": "cpm",
+   "file": "tools/template/cmake/dependencies.cmake",
+   "line": 18,
+   "source": "jfalcou/copacabana",
+   "form": "branch",
+   "current": "main",
+   "latest": "main",
+   "status": "fixed"
+  }
+ ]
+}
