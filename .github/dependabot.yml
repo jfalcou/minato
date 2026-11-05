@@ -1,0 +1,25 @@
+## The actions and the pre-commit hooks from outside the libraries, one grouped pull request a week each. The jfalcou
+## references are pins, which minato moves itself.
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    ignore:
+      - dependency-name: "jfalcou/*"
+    groups:
+      github-actions:
+        patterns:
+          - "*"
+    open-pull-requests-limit: 3
+
+  - package-ecosystem: "pre-commit"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    groups:
+      pre-commit:
+        patterns:
+          - "*"
+    open-pull-requests-limit: 3

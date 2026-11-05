@@ -1,0 +1,42 @@
+## The pre-commit hooks and the tests of the pin rules, on every pull request and every change of main. The commits
+## of minato-sendo touch the measured pins alone, which no check reads.
+name: Checks
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - 'libraries/*/pins.json'
+      - 'run.json'
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: minato-checks-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  precommit:
+    name: Meta Checks
+    uses: jfalcou/copacabana/.github/workflows/precommit.yml@main
+
+  tests:
+    name: Tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Fetch current branch
+        uses: actions/checkout@v7
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: '3.14'
+
+      - name: Run the tests
+        run: python -m unittest discover -s tests -v
