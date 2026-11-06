@@ -953,6 +953,56 @@ class Remotes(unittest.TestCase):
             pins.Remote().image_tags("r.io/o/i")
 
 
+class PullText(Case):
+    """The title and the body of the pull request of a library, from its pins behind."""
+
+    WORKFLOW = "jobs:\n  {}:\n    container: ghcr.io/jfalcou/compilers:v10\n"
+
+    def test_one_move_names_its_dependency_and_version(self):
+        """One move covering every pin titles the pull request with the dependency and its new version."""
+        found = self.tree({"CMakeLists.txt": TTS.format("4.0")}).measure()
+        self.assertEqual(
+            pins.pull_text(found),
+            ("Move tts to v4.1.0", "- `jfalcou/tts`: `4.0` to `v4.1.0`\n  - `CMakeLists.txt:1`\n"),
+        )
+
+    def test_each_dependency_lists_its_moves_and_lines(self):
+        """Three dependencies take a serial comma, a SHA shows seven characters, and one move gathers its lines."""
+        copacabana = "      - uses: jfalcou/copacabana/.github/actions/x@" + B + "\n"
+        found = self.tree(
+            {
+                "CMakeLists.txt": TTS.format(A),
+                ".github/workflows/a.yml": self.WORKFLOW.format("x") + "    steps:\n" + copacabana,
+                ".github/workflows/b.yml": self.WORKFLOW.format("y"),
+            }
+        ).measure()
+        title, body = pins.pull_text(found)
+        self.assertEqual(title, "Move the pins of compilers, copacabana, and tts")
+        self.assertEqual(
+            body.splitlines(),
+            [
+                "- `ghcr.io/jfalcou/compilers`: `v10` to `v11`",
+                "  - `.github/workflows/a.yml:3`",
+                "  - `.github/workflows/b.yml:3`",
+                "- `jfalcou/copacabana`: `bbbbbbb` to `ccccccc`",
+                "  - `.github/workflows/a.yml:5`",
+                "- `jfalcou/tts`: `aaaaaaa` to `ccccccc`",
+                "  - `CMakeLists.txt:1`",
+            ],
+        )
+
+    def test_two_moves_of_one_dependency_name_it_alone(self):
+        """Two dependencies take no comma, and one dependency with two moves is named without a version."""
+        two = self.tree({"CMakeLists.txt": TTS.format("4.0"), ".github/workflows/a.yml": self.WORKFLOW.format("x")})
+        self.assertEqual(pins.pull_text(two.measure())[0], "Move the pins of compilers and tts")
+        moves = self.tree({"cmake/a.cmake": TTS.format("4.0"), "cmake/b.cmake": TTS.format(A)})
+        self.assertEqual(pins.pull_text(moves.measure())[0], "Move the pins of tts")
+
+    def test_no_pin_behind_gives_no_text(self):
+        """A library whose pins are current has no pull request to write."""
+        self.assertIsNone(pins.pull_text(self.tree({"CMakeLists.txt": TTS.format("v4.1.0")}).measure()))
+
+
 class Commands(Case):
     """The commands, against a minato tree of their own."""
 
@@ -983,6 +1033,15 @@ class Commands(Case):
         status, out, _ = self.run_main("apply", "tts", str(clone))
         self.assertEqual((status, out), (0, "CMakeLists.txt:1: jfalcou/tts 4.0 -> v4.1.0\n"))
         self.assertEqual(pins.read(clone / "CMakeLists.txt"), TTS.format("v4.1.0"))
+
+    def test_apply_writes_the_text_of_its_pull_request(self):
+        """`apply --summary` writes the title and the body when a pin moves, and no file when none does."""
+        clone, path = self.clones.root / "tts", self.minato.root / "summary.json"
+        self.assertEqual(self.run_main("apply", "tts", str(clone), "--summary", str(path))[0], 0)
+        self.assertEqual(json.loads(path.read_text())["title"], "Move tts to v4.1.0")
+        path.unlink()
+        self.run_main("apply", "tts", str(clone), "--summary", str(path))
+        self.assertFalse(path.exists())
 
     def test_apply_refuses_unknown_and_frozen_libraries(self):
         """`apply` refuses a library minato does not list and one it does not update, and writes nothing."""

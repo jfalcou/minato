@@ -8,9 +8,10 @@ Usage:
         Every library under libraries/, its clone in <dir>/<name>: a count per status, its
         pins.json written with --write, and the changes a move would make with --diff. The exit
         status is 1 when a library could not be measured.
-    pins.py apply <library> <clone>
-        The pins of one clone moved in place, one line printed per pin moved. A library whose
-        library.json sets `updates` to false is refused.
+    pins.py apply <library> <clone> [--summary <file>]
+        The pins of one clone moved in place, one line printed per pin moved, and with --summary
+        the title and the body of their pull request written as JSON when a pin moves. A library
+        whose library.json sets `updates` to false is refused.
 
 A pin names a repository of an owner of minato.json, or a tag of one of its images:
     - the GIT_TAG of a CPMAddPackage, CPMDeclarePackage, or CPMFindPackage call, its VERSION, or
@@ -1325,6 +1326,64 @@ def changes(root, pins):
     return out
 
 
+def short(text):
+    """Write every full SHA of a pin text with its first seven characters, as GitHub shows them.
+
+    Args:
+        text: The text of a pin, its reference and its labels.
+
+    Returns:
+        The same text with each full SHA shortened.
+    """
+    return re.sub(rf"\b{SHA.pattern}\b", lambda m: m.group(0)[:7], text)
+
+
+def joined(names):
+    """Join names as an English list, with the serial comma from three names on.
+
+    Args:
+        names: The names, at least one.
+
+    Returns:
+        `a`, `a and b`, or `a, b, and c`.
+    """
+    *first, last = names
+    if not first:
+        return last
+    return f"{first[0]} and {last}" if len(first) == 1 else ", ".join(first) + f", and {last}"
+
+
+def pull_text(pins):
+    """Write the title and the body of the pull request that moves the pins behind.
+
+    Args:
+        pins: The resolved pins of a library.
+
+    Returns:
+        The title and the body, or None when no pin is behind. The title names the dependency and
+        its new version when one move covers every pin, and the dependencies otherwise. The body
+        gives one entry per dependency and move, with the lines the move changes.
+    """
+    moves = {}
+    for p in pins:
+        if p.status == "behind":
+            sites = moves.setdefault(p.source, {}).setdefault((short(p.text(False)), short(p.text(True))), [])
+            sites.append(f"{p.file}:{p.line}")
+    if not moves:
+        return None
+    names = [source.rsplit("/", 1)[-1] for source in moves]
+    if len(moves) == 1 and len(next(iter(moves.values()))) == 1:
+        title = f"Move {names[0]} to {next(iter(next(iter(moves.values()))))[1]}"
+    else:
+        title = f"Move the pins of {joined(names)}"
+    body = []
+    for source, by_move in moves.items():
+        for (old, new), sites in by_move.items():
+            body.append(f"- `{source}`: `{old}` to `{new}`")
+            body += [f"  - `{site}`" for site in sites]
+    return title, "\n".join(body) + "\n"
+
+
 def load(path, default):
     """Read a JSON file.
 
@@ -1409,7 +1468,7 @@ def run_apply(args, config, remote):
     """Move the pins of one clone in place, and print one line per pin moved.
 
     Args:
-        args: The arguments of the command, `library` and `clone`.
+        args: The arguments of the command, `library`, `clone`, and `summary`, the file of the title and the body.
         config: The content of minato.json.
         remote: The source of the tags and heads, a Remote.
 
@@ -1424,6 +1483,10 @@ def run_apply(args, config, remote):
     pins = library_pins(args.library, args.clone, config, remote)
     for path, (_, after) in changes(args.clone, pins).items():
         write(pathlib.Path(args.clone) / path, after)
+    text = pull_text(pins)
+    if args.summary and text:
+        record = json.dumps({"title": text[0], "body": text[1]}, indent=1)
+        pathlib.Path(args.summary).write_text(record + "\n", encoding="utf-8")
     for p in pins:
         if p.status == "behind":
             print(f"{p.file}:{p.line}: {p.source} {p.text(False)} -> {p.text(True)}")
@@ -1495,6 +1558,7 @@ def main(argv=None):
     apply_parser = sub.add_parser("apply")
     apply_parser.add_argument("library")
     apply_parser.add_argument("clone")
+    apply_parser.add_argument("--summary", default="")
     args = parser.parse_args(argv)
     commands = {"scan": run_scan, "apply": run_apply, "check": run_check}
     try:

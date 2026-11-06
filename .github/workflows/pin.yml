@@ -96,7 +96,7 @@ jobs:
         env:
           LIBRARY: ${{ matrix.library.name }}
         run: |
-          python scripts/pins.py apply "$LIBRARY" clone | tee moved.txt
+          python scripts/pins.py apply "$LIBRARY" clone --summary summary.json | tee moved.txt
           echo "count=$(wc -l < moved.txt)" >> "$GITHUB_OUTPUT"
 
       - name: Open or update the pull request
@@ -110,11 +110,17 @@ jobs:
           id=$(gh api "/users/${SLUG}%5Bbot%5D" --jq .id)
           git config user.name "${SLUG}[bot]"
           git config user.email "${id}+${SLUG}[bot]@users.noreply.github.com"
+          # The title names the dependencies moved, and the body lists each move with the lines it changes.
+          title=$(python3 -c 'import json; print(json.load(open("../summary.json"))["title"])')
+          python3 -c 'import json; print(json.load(open("../summary.json"))["body"], end="")' > ../body.md
           git switch -c minato/pins
-          git commit -a -q -m "Move the pins to the newest versions" -m "$(cat ../moved.txt)"
+          git commit -a -q -m "$title" -m "$(cat ../body.md)"
           git push -q --force "https://x-access-token:${GH_TOKEN}@github.com/${REPOSITORY}.git" minato/pins
-          if [ -z "$(gh pr list --repo "$REPOSITORY" --head minato/pins --state open --json number --jq '.[0].number')" ]; then
-            gh pr create --repo "$REPOSITORY" --head minato/pins --title "Move the pins to the newest versions" --body ""
+          number=$(gh pr list --repo "$REPOSITORY" --head minato/pins --state open --json number --jq '.[0].number')
+          if [ -z "$number" ]; then
+            gh pr create --repo "$REPOSITORY" --head minato/pins --title "$title" --body-file ../body.md
+          else
+            gh pr edit "$number" --repo "$REPOSITORY" --title "$title" --body-file ../body.md
           fi
 
   measure:
