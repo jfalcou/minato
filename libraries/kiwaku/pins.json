@@ -9,7 +9,7 @@
    "form": "tag",
    "current": "v9",
    "latest": "v11",
-   "status": "behind"
+   "status": "held"
   },
   {
    "kind": "image",
@@ -19,7 +19,7 @@
    "form": "tag",
    "current": "v9",
    "latest": "v11",
-   "status": "behind"
+   "status": "held"
   },
   {
    "kind": "image",
@@ -29,7 +29,7 @@
    "form": "tag",
    "current": "v9",
    "latest": "v11",
-   "status": "behind"
+   "status": "held"
   },
   {
    "kind": "image",
@@ -39,7 +39,7 @@
    "form": "tag",
    "current": "v9",
    "latest": "v11",
-   "status": "behind"
+   "status": "held"
   },
   {
    "kind": "image",
@@ -49,7 +49,7 @@
    "form": "tag",
    "current": "v9",
    "latest": "v11",
-   "status": "behind"
+   "status": "held"
   },
   {
    "kind": "image",
@@ -59,7 +59,7 @@
    "form": "tag",
    "current": "v9",
    "latest": "v11",
-   "status": "behind"
+   "status": "held"
   },
   {
    "kind": "cpm",

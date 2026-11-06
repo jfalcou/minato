@@ -198,7 +198,7 @@
    "source": "jfalcou/tts",
    "form": "sha",
    "current": "d0ee3e83481ba048dc054d5fc66158d4b980c928",
-   "latest": "acfc395eff6c849164c81086b5dc9ca4b8a68274",
+   "latest": "7be73b571461a2ab6d9ea7bad4f02cdeedf7e6b7",
    "status": "behind"
   },
   {
@@ -208,7 +208,7 @@
    "source": "jfalcou/eve",
    "form": "sha",
    "current": "829b03d99890d91adeda27c7193268f019b55679",
-   "latest": "021bf0ef9d5301a21c565db0974c90430051cba4",
+   "latest": "f6717b723d4c91fed0bd2df1881ab8471e125874",
    "status": "behind"
   },
   {

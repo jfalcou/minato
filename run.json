@@ -1,0 +1,51 @@
+{
+ "at": "2026-11-06T22:37:21+00:00",
+ "run": "https://github.com/jfalcou/minato/actions/runs/42306034605",
+ "libraries": {
+  "copacabana": {
+   "current": 15,
+   "behind": 6,
+   "fixed": 11
+  },
+  "eve": {
+   "behind": 27,
+   "fixed": 1
+  },
+  "fluxion": {
+   "behind": 1,
+   "fixed": 11
+  },
+  "kiwaku": {
+   "held": 6,
+   "fixed": 6
+  },
+  "kumi": {
+   "current": 20,
+   "fixed": 17,
+   "behind": 2
+  },
+  "kyosu": {
+   "current": 8,
+   "fixed": 11,
+   "behind": 3
+  },
+  "polyfloat": {
+   "current": 7,
+   "fixed": 10,
+   "behind": 3
+  },
+  "raberu": {
+   "current": 13,
+   "fixed": 13
+  },
+  "spy": {
+   "current": 17,
+   "fixed": 13
+  },
+  "tts": {
+   "current": 13,
+   "fixed": 12,
+   "behind": 1
+  }
+ }
+}
