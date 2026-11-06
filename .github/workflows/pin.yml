@@ -1,0 +1,197 @@
+## Every Friday and on dispatch, the pins of the libraries moved by minato-sendo, one pull request per library
+## on its branch minato/pins, then every pin measured again into libraries/*/pins.json and run.json, committed
+## to main. That weekly commit keeps the schedule alive: GitHub disables a scheduled workflow of a public
+## repository after 60 days without activity.
+name: Pins
+on:
+  schedule:
+    - cron: '23 6 * * 5'
+  workflow_dispatch:
+    inputs:
+      library:
+        description: 'The one library to move, every library that takes updates when empty'
+        required: false
+        default: ''
+
+permissions:
+  contents: read
+
+concurrency:
+  group: minato-pins
+  cancel-in-progress: false
+
+jobs:
+  list:
+    name: Libraries
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    outputs:
+      libraries: ${{ steps.list.outputs.libraries }}
+    steps:
+      - name: Fetch minato
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - name: List the libraries that take updates
+        id: list
+        env:
+          ONLY: ${{ inputs.library }}
+        run: |
+          python3 - >> "$GITHUB_OUTPUT" <<'EOF'
+          import json, os, pathlib
+          only = os.environ.get("ONLY", "")
+          found = [{"name": p.parent.name, "repository": json.loads(p.read_text())["repository"]}
+                   for p in sorted(pathlib.Path("libraries").glob("*/library.json"))
+                   if json.loads(p.read_text()).get("updates", True) and only in ("", p.parent.name)]
+          if only and not found:
+              raise SystemExit(f"no library {only} that takes updates")
+          print("libraries=" + json.dumps(found))
+          EOF
+
+  move:
+    name: Move ${{ matrix.library.name }}
+    needs: list
+    if: needs.list.outputs.libraries != '[]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        library: ${{ fromJSON(needs.list.outputs.libraries) }}
+    steps:
+      - name: Take a token of minato-sendo for the library
+        id: token
+        uses: actions/create-github-app-token@v2
+        with:
+          app-id: ${{ vars.MINATO_APP_ID }}
+          private-key: ${{ secrets.MINATO_APP_KEY }}
+          owner: jfalcou
+          repositories: ${{ matrix.library.name }}
+
+      - name: Fetch minato
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - name: Fetch the library
+        uses: actions/checkout@v7
+        with:
+          repository: ${{ matrix.library.repository }}
+          token: ${{ steps.token.outputs.token }}
+          path: clone
+          persist-credentials: false
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: '3.14'
+
+      - name: Install the dependencies
+        run: pip install --only-binary ":all:" -r requirements.txt
+
+      - name: Move the pins
+        id: move
+        env:
+          LIBRARY: ${{ matrix.library.name }}
+        run: |
+          python scripts/pins.py apply "$LIBRARY" clone | tee moved.txt
+          echo "count=$(wc -l < moved.txt)" >> "$GITHUB_OUTPUT"
+
+      - name: Open or update the pull request
+        if: steps.move.outputs.count != '0'
+        working-directory: clone
+        env:
+          GH_TOKEN: ${{ steps.token.outputs.token }}
+          SLUG: ${{ steps.token.outputs.app-slug }}
+          REPOSITORY: ${{ matrix.library.repository }}
+        run: |
+          id=$(gh api "/users/${SLUG}%5Bbot%5D" --jq .id)
+          git config user.name "${SLUG}[bot]"
+          git config user.email "${id}+${SLUG}[bot]@users.noreply.github.com"
+          git switch -c minato/pins
+          git commit -a -q -m "Move the pins to the newest versions" -m "$(cat ../moved.txt)"
+          git push -q --force "https://x-access-token:${GH_TOKEN}@github.com/${REPOSITORY}.git" minato/pins
+          if [ -z "$(gh pr list --repo "$REPOSITORY" --head minato/pins --state open --json number --jq '.[0].number')" ]; then
+            gh pr create --repo "$REPOSITORY" --head minato/pins --title "Move the pins to the newest versions" --body ""
+          fi
+
+  measure:
+    name: Measure
+    needs: [list, move]
+    # A library that failed to move is measured all the same: its pins.json then shows the pins still behind.
+    if: always() && needs.list.result == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Take a token of minato-sendo for minato
+        id: token
+        uses: actions/create-github-app-token@v2
+        with:
+          app-id: ${{ vars.MINATO_APP_ID }}
+          private-key: ${{ secrets.MINATO_APP_KEY }}
+          owner: jfalcou
+          repositories: minato
+
+      - name: Fetch minato
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: '3.14'
+
+      - name: Install the dependencies
+        run: pip install --only-binary ":all:" -r requirements.txt
+
+      - name: Fetch every library
+        run: |
+          for f in libraries/*/library.json; do
+            repository=$(python3 -c 'import json, sys; print(json.load(open(sys.argv[1]))["repository"])' "$f")
+            git clone -q --depth 1 "https://github.com/${repository}.git" "clones/$(basename "$(dirname "$f")")"
+          done
+
+      - name: Measure the pins
+        # A library that cannot be measured fails the job at its end, once the others are committed.
+        run: python scripts/pins.py check --clones clones --write || echo "UNMEASURED=1" >> "$GITHUB_ENV"
+
+      - name: Record the pull requests and the run
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          python3 - <<'EOF'
+          import collections, datetime, json, os, pathlib, subprocess
+          run = {"at": datetime.datetime.now(datetime.UTC).isoformat(timespec="seconds"), "run": os.environ["RUN"], "libraries": {}}
+          for folder in sorted(pathlib.Path("libraries").iterdir()):
+              repository = json.loads((folder / "library.json").read_text())["repository"]
+              found = subprocess.run(["gh", "pr", "list", "--repo", repository, "--head", "minato/pins", "--state", "open",
+                                      "--json", "url", "--jq", ".[0].url"], capture_output=True, text=True, check=False)
+              path = folder / "pins.json"
+              record = json.loads(path.read_text()) if path.is_file() else {"pins": []}
+              record["pull"] = found.stdout.strip() or None
+              path.write_text(json.dumps(record, indent=1) + "\n", encoding="utf-8")
+              run["libraries"][folder.name] = dict(collections.Counter(p["status"] for p in record["pins"]))
+          pathlib.Path("run.json").write_text(json.dumps(run, indent=1) + "\n", encoding="utf-8")
+          EOF
+
+      - name: Commit to main
+        env:
+          GH_TOKEN: ${{ steps.token.outputs.token }}
+          SLUG: ${{ steps.token.outputs.app-slug }}
+        run: |
+          id=$(gh api "/users/${SLUG}%5Bbot%5D" --jq .id)
+          git config user.name "${SLUG}[bot]"
+          git config user.email "${id}+${SLUG}[bot]@users.noreply.github.com"
+          git add libraries/*/pins.json run.json
+          git commit -q -m "Measure the pins of $(date -u +%F)"
+          git push -q "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" HEAD:main
+
+      - name: Report a library not measured
+        if: env.UNMEASURED == '1'
+        run: |
+          echo "::error::a library could not be measured, see the step Measure the pins"
+          exit 1
