@@ -6,7 +6,11 @@
     "ghcr.io/jfalcou/compilers"
   ],
   "matrices": {
-    "files": "**/.github/matrices/*.yml",
+    "files": [
+      "**/.github/matrices/*.yml",
+      "**/.github/matrices/*.yaml",
+      "**/.github/matrices/*.json"
+    ],
     "registry": "ghcr.io/jfalcou/compilers"
   }
 }

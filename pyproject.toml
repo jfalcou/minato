@@ -3,6 +3,7 @@ name = "minato"
 description = "The meta handler of the jfalcou libraries: their list, and the pins between them."
 requires-python = ">=3.12"
 version = "0.0.0"
+dependencies = ["PyYAML>=6.0"]
 
 [tool.ruff]
 line-length = 120

@@ -38,5 +38,9 @@ jobs:
         with:
           python-version: '3.14'
 
+      - name: Install the dependencies
+        # Binary only, so no dependency runs a setup script during the install.
+        run: pip install --only-binary ":all:" -r requirements.txt
+
       - name: Run the tests
         run: python -m unittest discover -s tests -v
