@@ -262,6 +262,16 @@
    "status": "behind"
   },
   {
+   "kind": "image",
+   "file": "docker/Dockerfile",
+   "line": 9,
+   "source": "ghcr.io/jfalcou/compilers",
+   "form": "tag",
+   "current": "v10",
+   "latest": "v11",
+   "status": "behind"
+  },
+  {
    "kind": "cpm",
    "file": "test/integration/cpm-test/CMakeLists.txt",
    "line": 18,
