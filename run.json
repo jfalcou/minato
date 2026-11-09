@@ -1,18 +1,17 @@
 {
- "at": "2026-11-06T22:37:21+00:00",
- "run": "https://github.com/jfalcou/minato/actions/runs/42306034605",
+ "at": "2026-11-09T10:37:23+00:00",
+ "run": "https://github.com/jfalcou/minato/actions/runs/42602039454",
  "libraries": {
   "copacabana": {
-   "current": 15,
-   "behind": 6,
+   "current": 20,
    "fixed": 11
   },
   "eve": {
-   "behind": 27,
-   "fixed": 1
+   "behind": 29,
+   "fixed": 2
   },
   "fluxion": {
-   "behind": 1,
+   "behind": 6,
    "fixed": 11
   },
   "kiwaku": {

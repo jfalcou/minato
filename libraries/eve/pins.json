@@ -4,7 +4,7 @@
   {
    "kind": "image",
    "file": ".github/workflows/ci-cycle.yml",
-   "line": 51,
+   "line": 52,
    "source": "ghcr.io/jfalcou/compilers",
    "form": "tag",
    "current": "v10",
@@ -12,9 +12,39 @@
    "status": "behind"
   },
   {
+   "kind": "uses",
+   "file": ".github/workflows/ci-cycle.yml",
+   "line": 55,
+   "source": "jfalcou/copacabana",
+   "form": "sha",
+   "current": "95054d7b00a79414ec717fdf0b770f7c9338b789",
+   "latest": "064ed5a324ac0fb2629c2a5953b83aac9f9436a5",
+   "status": "behind"
+  },
+  {
    "kind": "image",
    "file": ".github/workflows/compile-cost.yml",
    "line": 43,
+   "source": "ghcr.io/jfalcou/compilers",
+   "form": "tag",
+   "current": "v10",
+   "latest": "v11",
+   "status": "behind"
+  },
+  {
+   "kind": "uses",
+   "file": ".github/workflows/coverage.yml",
+   "line": 32,
+   "source": "jfalcou/copacabana",
+   "form": "branch",
+   "current": "main",
+   "latest": "main",
+   "status": "fixed"
+  },
+  {
+   "kind": "image",
+   "file": ".github/workflows/coverage.yml",
+   "line": 36,
    "source": "ghcr.io/jfalcou/compilers",
    "form": "tag",
    "current": "v10",
@@ -34,7 +64,7 @@
   {
    "kind": "image",
    "file": ".github/workflows/documentation.yml",
-   "line": 103,
+   "line": 79,
    "source": "ghcr.io/jfalcou/compilers",
    "form": "tag",
    "current": "v10",

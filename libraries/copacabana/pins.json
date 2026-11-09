@@ -13,66 +13,6 @@
   },
   {
    "kind": "image",
-   "file": ".github/workflows/compile-cost.yml",
-   "line": 51,
-   "source": "ghcr.io/jfalcou/compilers",
-   "form": "tag",
-   "current": "v10",
-   "latest": "v11",
-   "status": "behind"
-  },
-  {
-   "kind": "image",
-   "file": ".github/workflows/coverage.yml",
-   "line": 26,
-   "source": "ghcr.io/jfalcou/compilers",
-   "form": "tag",
-   "current": "v10",
-   "latest": "v11",
-   "status": "behind"
-  },
-  {
-   "kind": "image",
-   "file": ".github/workflows/documentation.yml",
-   "line": 29,
-   "source": "ghcr.io/jfalcou/compilers",
-   "form": "tag",
-   "current": "v10",
-   "latest": "v11",
-   "status": "behind"
-  },
-  {
-   "kind": "image",
-   "file": ".github/workflows/integration.yml",
-   "line": 26,
-   "source": "ghcr.io/jfalcou/compilers",
-   "form": "tag",
-   "current": "v10",
-   "latest": "v11",
-   "status": "behind"
-  },
-  {
-   "kind": "image",
-   "file": ".github/workflows/package-standalone.yml",
-   "line": 26,
-   "source": "ghcr.io/jfalcou/compilers",
-   "form": "tag",
-   "current": "v10",
-   "latest": "v11",
-   "status": "behind"
-  },
-  {
-   "kind": "image",
-   "file": ".github/workflows/sanitizers.yml",
-   "line": 22,
-   "source": "ghcr.io/jfalcou/compilers",
-   "form": "tag",
-   "current": "v10",
-   "latest": "v11",
-   "status": "behind"
-  },
-  {
-   "kind": "image",
    "file": ".github/workflows/unit.yml",
    "line": 76,
    "source": "ghcr.io/jfalcou/compilers",
@@ -232,9 +172,39 @@
    "status": "fixed"
   },
   {
+   "kind": "image",
+   "file": "tools/template/.github/workflows/ci.yml",
+   "line": 57,
+   "source": "ghcr.io/jfalcou/compilers",
+   "form": "tag",
+   "current": "v11",
+   "latest": "v11",
+   "status": "current"
+  },
+  {
    "kind": "uses",
    "file": "tools/template/.github/workflows/ci.yml",
-   "line": 62,
+   "line": 64,
+   "source": "jfalcou/copacabana",
+   "form": "branch",
+   "current": "main",
+   "latest": "main",
+   "status": "fixed"
+  },
+  {
+   "kind": "image",
+   "file": "tools/template/.github/workflows/ci.yml",
+   "line": 67,
+   "source": "ghcr.io/jfalcou/compilers",
+   "form": "tag",
+   "current": "v11",
+   "latest": "v11",
+   "status": "current"
+  },
+  {
+   "kind": "uses",
+   "file": "tools/template/.github/workflows/ci.yml",
+   "line": 75,
    "source": "jfalcou/copacabana",
    "form": "branch",
    "current": "main",
@@ -244,7 +214,7 @@
   {
    "kind": "uses",
    "file": "tools/template/.github/workflows/ci.yml",
-   "line": 72,
+   "line": 82,
    "source": "jfalcou/copacabana",
    "form": "branch",
    "current": "main",
@@ -254,17 +224,7 @@
   {
    "kind": "uses",
    "file": "tools/template/.github/workflows/ci.yml",
-   "line": 79,
-   "source": "jfalcou/copacabana",
-   "form": "branch",
-   "current": "main",
-   "latest": "main",
-   "status": "fixed"
-  },
-  {
-   "kind": "uses",
-   "file": "tools/template/.github/workflows/ci.yml",
-   "line": 86,
+   "line": 89,
    "source": "jfalcou/copacabana",
    "form": "branch",
    "current": "main",
@@ -282,6 +242,16 @@
    "status": "fixed"
   },
   {
+   "kind": "image",
+   "file": "tools/template/.github/workflows/documentation.yml",
+   "line": 24,
+   "source": "ghcr.io/jfalcou/compilers",
+   "form": "tag",
+   "current": "v11",
+   "latest": "v11",
+   "status": "current"
+  },
+  {
    "kind": "uses",
    "file": "tools/template/.github/workflows/integration.yml",
    "line": 18,
@@ -292,6 +262,16 @@
    "status": "fixed"
   },
   {
+   "kind": "image",
+   "file": "tools/template/.github/workflows/integration.yml",
+   "line": 23,
+   "source": "ghcr.io/jfalcou/compilers",
+   "form": "tag",
+   "current": "v11",
+   "latest": "v11",
+   "status": "current"
+  },
+  {
    "kind": "uses",
    "file": "tools/template/.github/workflows/standalone.yml",
    "line": 18,
@@ -300,6 +280,16 @@
    "current": "main",
    "latest": "main",
    "status": "fixed"
+  },
+  {
+   "kind": "image",
+   "file": "tools/template/.github/workflows/standalone.yml",
+   "line": 21,
+   "source": "ghcr.io/jfalcou/compilers",
+   "form": "tag",
+   "current": "v11",
+   "latest": "v11",
+   "status": "current"
   },
   {
    "kind": "image",

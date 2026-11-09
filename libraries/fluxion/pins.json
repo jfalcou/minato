@@ -32,9 +32,39 @@
    "status": "fixed"
   },
   {
+   "kind": "image",
+   "file": ".github/workflows/ci.yml",
+   "line": 40,
+   "source": "ghcr.io/jfalcou/compilers",
+   "form": "tag",
+   "current": "v10",
+   "latest": "v11",
+   "status": "behind"
+  },
+  {
    "kind": "uses",
    "file": ".github/workflows/ci.yml",
-   "line": 45,
+   "line": 47,
+   "source": "jfalcou/copacabana",
+   "form": "branch",
+   "current": "main",
+   "latest": "main",
+   "status": "fixed"
+  },
+  {
+   "kind": "image",
+   "file": ".github/workflows/ci.yml",
+   "line": 50,
+   "source": "ghcr.io/jfalcou/compilers",
+   "form": "tag",
+   "current": "v10",
+   "latest": "v11",
+   "status": "behind"
+  },
+  {
+   "kind": "uses",
+   "file": ".github/workflows/ci.yml",
+   "line": 58,
    "source": "jfalcou/copacabana",
    "form": "branch",
    "current": "main",
@@ -44,17 +74,7 @@
   {
    "kind": "uses",
    "file": ".github/workflows/ci.yml",
-   "line": 55,
-   "source": "jfalcou/copacabana",
-   "form": "branch",
-   "current": "main",
-   "latest": "main",
-   "status": "fixed"
-  },
-  {
-   "kind": "uses",
-   "file": ".github/workflows/ci.yml",
-   "line": 62,
+   "line": 65,
    "source": "jfalcou/copacabana",
    "form": "branch",
    "current": "main",
@@ -72,6 +92,16 @@
    "status": "fixed"
   },
   {
+   "kind": "image",
+   "file": ".github/workflows/compile-cost.yml",
+   "line": 30,
+   "source": "ghcr.io/jfalcou/compilers",
+   "form": "tag",
+   "current": "v10",
+   "latest": "v11",
+   "status": "behind"
+  },
+  {
    "kind": "uses",
    "file": ".github/workflows/documentation.yml",
    "line": 20,
@@ -82,6 +112,16 @@
    "status": "fixed"
   },
   {
+   "kind": "image",
+   "file": ".github/workflows/documentation.yml",
+   "line": 24,
+   "source": "ghcr.io/jfalcou/compilers",
+   "form": "tag",
+   "current": "v10",
+   "latest": "v11",
+   "status": "behind"
+  },
+  {
    "kind": "uses",
    "file": ".github/workflows/integration.yml",
    "line": 18,
@@ -90,6 +130,16 @@
    "current": "main",
    "latest": "main",
    "status": "fixed"
+  },
+  {
+   "kind": "image",
+   "file": ".github/workflows/integration.yml",
+   "line": 23,
+   "source": "ghcr.io/jfalcou/compilers",
+   "form": "tag",
+   "current": "v10",
+   "latest": "v11",
+   "status": "behind"
   },
   {
    "kind": "cpm",

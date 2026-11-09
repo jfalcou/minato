@@ -1,5 +1,5 @@
 {
- "pull": null,
+ "pull": "https://github.com/jfalcou/kyosu/pull/296",
  "pins": [
   {
    "kind": "matrix",
@@ -188,7 +188,7 @@
    "source": "jfalcou/copacabana",
    "form": "sha",
    "current": "cc2bc58c53c64c7cc47b611fee219b0cefa27d43",
-   "latest": "0242be901ffd6fed6cece0e44d1b3c4385e7e38d",
+   "latest": "064ed5a324ac0fb2629c2a5953b83aac9f9436a5",
    "status": "behind"
   },
   {
@@ -198,7 +198,7 @@
    "source": "jfalcou/tts",
    "form": "sha",
    "current": "d0ee3e83481ba048dc054d5fc66158d4b980c928",
-   "latest": "7be73b571461a2ab6d9ea7bad4f02cdeedf7e6b7",
+   "latest": "4ac6e558e767c0df56f59a132873d1873d6023ba",
    "status": "behind"
   },
   {
@@ -208,7 +208,7 @@
    "source": "jfalcou/eve",
    "form": "sha",
    "current": "829b03d99890d91adeda27c7193268f019b55679",
-   "latest": "f6717b723d4c91fed0bd2df1881ab8471e125874",
+   "latest": "960b6c447ea525be2382ccb5262f87edcfce4550",
    "status": "behind"
   },
   {

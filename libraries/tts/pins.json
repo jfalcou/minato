@@ -1,5 +1,5 @@
 {
- "pull": "https://github.com/jfalcou/tts/pull/268",
+ "pull": "https://github.com/jfalcou/tts/pull/271",
  "pins": [
   {
    "kind": "matrix",
@@ -247,8 +247,8 @@
    "line": 15,
    "source": "jfalcou/copacabana",
    "form": "sha",
-   "current": "cc2bc58c53c64c7cc47b611fee219b0cefa27d43",
-   "latest": "0242be901ffd6fed6cece0e44d1b3c4385e7e38d",
+   "current": "0242be901ffd6fed6cece0e44d1b3c4385e7e38d",
+   "latest": "064ed5a324ac0fb2629c2a5953b83aac9f9436a5",
    "status": "behind"
   },
   {
