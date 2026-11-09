@@ -30,6 +30,13 @@ pin with the newest version of its library. A library whose pins are behind rece
 request that moves all of these pins, and its CI runs against that pull request as against any
 other. Pins that a library keeps fixed, and pins that follow a branch, are left as they are.
 
+A run started by hand with `measure` set to true measures every pin again and moves none, which
+brings the measure up to date after the merge of a pull request of minato:
+
+```
+gh workflow run pin.yml --repo jfalcou/minato -f measure=true
+```
+
 Dependabot keeps the actions and the pre-commit hooks from outside the set, and leaves the jfalcou
 pins to minato.
 
