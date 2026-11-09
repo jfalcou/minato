@@ -1,11 +1,14 @@
-## Every Friday and on dispatch, the pins of the libraries moved by minato-sendo, one pull request per library
-## on its branch minato/pins, then every pin measured again into libraries/*/pins.json and run.json, committed
-## to main. That weekly commit keeps the schedule alive: GitHub disables a scheduled workflow of a public
-## repository after 60 days without activity.
+## Every Friday, on dispatch, and on a release of a dependency, the pins of the libraries moved by minato-sendo,
+## one pull request per library on its branch minato/pins, then every pin measured again into libraries/*/pins.json
+## and run.json, committed to main. That weekly commit keeps the schedule alive: GitHub disables a scheduled
+## workflow of a public repository after 60 days without activity.
 name: Pins
 on:
   schedule:
     - cron: '23 6 * * 5'
+  # Sent by the release workflow of a dependency: a pin frozen on its previous tag moves the same day.
+  repository_dispatch:
+    types: [release]
   workflow_dispatch:
     inputs:
       library:

@@ -25,10 +25,10 @@ The libraries depend on each other. A library fetches TTS and EVE when it builds
 workflows of Copacabana, and runs its jobs in the compilers image. Each of these dependencies is
 pinned to a version, which stays behind once its library publishes a newer one.
 
-Every Friday, and also when started by hand, minato compares each pin with the newest version of its
-library. A library whose pins are behind receives a single pull request that moves all of these pins,
-and its CI runs against that pull request as against any other. Pins that a library keeps fixed, and
-pins that follow a branch, are left as they are.
+Every Friday, after each release of Copacabana, and also when started by hand, minato compares each
+pin with the newest version of its library. A library whose pins are behind receives a single pull
+request that moves all of these pins, and its CI runs against that pull request as against any
+other. Pins that a library keeps fixed, and pins that follow a branch, are left as they are.
 
 Dependabot keeps the actions and the pre-commit hooks from outside the set, and leaves the jfalcou
 pins to minato.
