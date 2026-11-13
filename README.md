@@ -1,3 +1,5 @@
+<img src="https://raw.githubusercontent.com/jfalcou/minato/refs/heads/main/doc/logo.svg" alt="minato logo: 港, harbor, in a vermilion breakwater lit at both ends of its mouth" align="left" width="8%" height="8%" />
+
 # Minato
 
 Minato is the meta handler of the jfalcou libraries, the repository for the work that concerns the
