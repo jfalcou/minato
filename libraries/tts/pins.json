@@ -1,5 +1,5 @@
 {
- "pull": "https://github.com/jfalcou/tts/pull/271",
+ "pull": "https://github.com/jfalcou/tts/pull/275",
  "pins": [
   {
    "kind": "matrix",
@@ -184,7 +184,7 @@
   {
    "kind": "uses",
    "file": ".github/workflows/documentation.yml",
-   "line": 20,
+   "line": 22,
    "source": "jfalcou/copacabana",
    "form": "branch",
    "current": "main",
@@ -194,7 +194,7 @@
   {
    "kind": "image",
    "file": ".github/workflows/documentation.yml",
-   "line": 23,
+   "line": 25,
    "source": "ghcr.io/jfalcou/compilers",
    "form": "tag",
    "current": "v11",
@@ -247,14 +247,14 @@
    "line": 15,
    "source": "jfalcou/copacabana",
    "form": "sha",
-   "current": "0242be901ffd6fed6cece0e44d1b3c4385e7e38d",
-   "latest": "064ed5a324ac0fb2629c2a5953b83aac9f9436a5",
+   "current": "064ed5a324ac0fb2629c2a5953b83aac9f9436a5",
+   "latest": "d055131cbcc563e502321991b590d6682c6a8b3c",
    "status": "behind"
   },
   {
    "kind": "cpm",
    "file": "test/integration/cpm-test/CMakeLists.txt",
-   "line": 18,
+   "line": 19,
    "source": "jfalcou/tts",
    "form": "variable",
    "current": "${GIT_BRANCH}",

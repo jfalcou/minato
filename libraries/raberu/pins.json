@@ -174,7 +174,7 @@
   {
    "kind": "uses",
    "file": ".github/workflows/documentation.yml",
-   "line": 20,
+   "line": 22,
    "source": "jfalcou/copacabana",
    "form": "branch",
    "current": "main",
@@ -184,7 +184,7 @@
   {
    "kind": "image",
    "file": ".github/workflows/documentation.yml",
-   "line": 24,
+   "line": 26,
    "source": "ghcr.io/jfalcou/compilers",
    "form": "tag",
    "current": "v11",
@@ -254,7 +254,7 @@
   {
    "kind": "cpm",
    "file": "test/integration/cpm-test/CMakeLists.txt",
-   "line": 18,
+   "line": 19,
    "source": "jfalcou/raberu",
    "form": "variable",
    "current": "${GIT_BRANCH}",

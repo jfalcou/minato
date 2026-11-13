@@ -7,9 +7,9 @@
    "line": 8,
    "source": "ghcr.io/jfalcou/compilers",
    "form": "tag",
-   "current": "v10",
+   "current": "v11",
    "latest": "v11",
-   "status": "behind"
+   "status": "current"
   },
   {
    "kind": "uses",
@@ -37,9 +37,9 @@
    "line": 40,
    "source": "ghcr.io/jfalcou/compilers",
    "form": "tag",
-   "current": "v10",
+   "current": "v11",
    "latest": "v11",
-   "status": "behind"
+   "status": "current"
   },
   {
    "kind": "uses",
@@ -57,9 +57,9 @@
    "line": 50,
    "source": "ghcr.io/jfalcou/compilers",
    "form": "tag",
-   "current": "v10",
+   "current": "v11",
    "latest": "v11",
-   "status": "behind"
+   "status": "current"
   },
   {
    "kind": "uses",
@@ -97,14 +97,14 @@
    "line": 30,
    "source": "ghcr.io/jfalcou/compilers",
    "form": "tag",
-   "current": "v10",
+   "current": "v11",
    "latest": "v11",
-   "status": "behind"
+   "status": "current"
   },
   {
    "kind": "uses",
    "file": ".github/workflows/documentation.yml",
-   "line": 20,
+   "line": 22,
    "source": "jfalcou/copacabana",
    "form": "branch",
    "current": "main",
@@ -114,12 +114,12 @@
   {
    "kind": "image",
    "file": ".github/workflows/documentation.yml",
-   "line": 24,
+   "line": 26,
    "source": "ghcr.io/jfalcou/compilers",
    "form": "tag",
-   "current": "v10",
+   "current": "v11",
    "latest": "v11",
-   "status": "behind"
+   "status": "current"
   },
   {
    "kind": "uses",
@@ -137,9 +137,9 @@
    "line": 23,
    "source": "ghcr.io/jfalcou/compilers",
    "form": "tag",
-   "current": "v10",
+   "current": "v11",
    "latest": "v11",
-   "status": "behind"
+   "status": "current"
   },
   {
    "kind": "cpm",

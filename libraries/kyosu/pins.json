@@ -1,5 +1,5 @@
 {
- "pull": "https://github.com/jfalcou/kyosu/pull/296",
+ "pull": "https://github.com/jfalcou/kyosu/pull/305",
  "pins": [
   {
    "kind": "matrix",
@@ -144,7 +144,7 @@
   {
    "kind": "uses",
    "file": ".github/workflows/documentation.yml",
-   "line": 20,
+   "line": 22,
    "source": "jfalcou/copacabana",
    "form": "branch",
    "current": "main",
@@ -154,7 +154,7 @@
   {
    "kind": "image",
    "file": ".github/workflows/documentation.yml",
-   "line": 24,
+   "line": 26,
    "source": "ghcr.io/jfalcou/compilers",
    "form": "tag",
    "current": "v11",
@@ -187,34 +187,34 @@
    "line": 20,
    "source": "jfalcou/copacabana",
    "form": "sha",
-   "current": "cc2bc58c53c64c7cc47b611fee219b0cefa27d43",
-   "latest": "064ed5a324ac0fb2629c2a5953b83aac9f9436a5",
+   "current": "064ed5a324ac0fb2629c2a5953b83aac9f9436a5",
+   "latest": "d055131cbcc563e502321991b590d6682c6a8b3c",
    "status": "behind"
   },
   {
    "kind": "cpm",
    "file": "cmake/dependencies.cmake",
-   "line": 23,
+   "line": 26,
    "source": "jfalcou/tts",
    "form": "sha",
-   "current": "d0ee3e83481ba048dc054d5fc66158d4b980c928",
-   "latest": "4ac6e558e767c0df56f59a132873d1873d6023ba",
+   "current": "4ac6e558e767c0df56f59a132873d1873d6023ba",
+   "latest": "e6b227c61634e4ec56b3b7ffd4a224a84f3f5c14",
    "status": "behind"
   },
   {
    "kind": "cpm",
    "file": "cmake/dependencies.cmake",
-   "line": 30,
+   "line": 32,
    "source": "jfalcou/eve",
    "form": "sha",
-   "current": "829b03d99890d91adeda27c7193268f019b55679",
-   "latest": "960b6c447ea525be2382ccb5262f87edcfce4550",
+   "current": "960b6c447ea525be2382ccb5262f87edcfce4550",
+   "latest": "1d4b1906c5192313ac5aadfdd381aa5d2eded3d7",
    "status": "behind"
   },
   {
    "kind": "cpm",
    "file": "test/integration/cpm-test/CMakeLists.txt",
-   "line": 18,
+   "line": 19,
    "source": "jfalcou/kyosu",
    "form": "variable",
    "current": "${GIT_BRANCH}",

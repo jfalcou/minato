@@ -144,7 +144,7 @@
   {
    "kind": "uses",
    "file": "tools/template/.github/workflows/ci.yml",
-   "line": 24,
+   "line": 31,
    "source": "jfalcou/copacabana",
    "form": "branch",
    "current": "main",
@@ -154,7 +154,7 @@
   {
    "kind": "image",
    "file": "tools/template/.github/workflows/ci.yml",
-   "line": 34,
+   "line": 41,
    "source": "ghcr.io/jfalcou/compilers",
    "form": "tag",
    "current": "v11",
@@ -164,7 +164,7 @@
   {
    "kind": "uses",
    "file": "tools/template/.github/workflows/ci.yml",
-   "line": 55,
+   "line": 62,
    "source": "jfalcou/copacabana",
    "form": "branch",
    "current": "main",
@@ -173,28 +173,8 @@
   },
   {
    "kind": "image",
-   "file": "tools/template/.github/workflows/ci.yml",
-   "line": 57,
-   "source": "ghcr.io/jfalcou/compilers",
-   "form": "tag",
-   "current": "v11",
-   "latest": "v11",
-   "status": "current"
-  },
-  {
-   "kind": "uses",
    "file": "tools/template/.github/workflows/ci.yml",
    "line": 64,
-   "source": "jfalcou/copacabana",
-   "form": "branch",
-   "current": "main",
-   "latest": "main",
-   "status": "fixed"
-  },
-  {
-   "kind": "image",
-   "file": "tools/template/.github/workflows/ci.yml",
-   "line": 67,
    "source": "ghcr.io/jfalcou/compilers",
    "form": "tag",
    "current": "v11",
@@ -204,12 +184,22 @@
   {
    "kind": "uses",
    "file": "tools/template/.github/workflows/ci.yml",
-   "line": 75,
+   "line": 71,
    "source": "jfalcou/copacabana",
    "form": "branch",
    "current": "main",
    "latest": "main",
    "status": "fixed"
+  },
+  {
+   "kind": "image",
+   "file": "tools/template/.github/workflows/ci.yml",
+   "line": 74,
+   "source": "ghcr.io/jfalcou/compilers",
+   "form": "tag",
+   "current": "v11",
+   "latest": "v11",
+   "status": "current"
   },
   {
    "kind": "uses",
@@ -233,8 +223,38 @@
   },
   {
    "kind": "uses",
+   "file": "tools/template/.github/workflows/ci.yml",
+   "line": 96,
+   "source": "jfalcou/copacabana",
+   "form": "branch",
+   "current": "main",
+   "latest": "main",
+   "status": "fixed"
+  },
+  {
+   "kind": "uses",
+   "file": "tools/template/.github/workflows/compile-cost.yml",
+   "line": 27,
+   "source": "jfalcou/copacabana",
+   "form": "branch",
+   "current": "main",
+   "latest": "main",
+   "status": "fixed"
+  },
+  {
+   "kind": "image",
+   "file": "tools/template/.github/workflows/compile-cost.yml",
+   "line": 31,
+   "source": "ghcr.io/jfalcou/compilers",
+   "form": "tag",
+   "current": "v11",
+   "latest": "v11",
+   "status": "current"
+  },
+  {
+   "kind": "uses",
    "file": "tools/template/.github/workflows/documentation.yml",
-   "line": 20,
+   "line": 22,
    "source": "jfalcou/copacabana",
    "form": "branch",
    "current": "main",
@@ -244,7 +264,7 @@
   {
    "kind": "image",
    "file": "tools/template/.github/workflows/documentation.yml",
-   "line": 24,
+   "line": 26,
    "source": "ghcr.io/jfalcou/compilers",
    "form": "tag",
    "current": "v11",
@@ -273,7 +293,7 @@
   },
   {
    "kind": "uses",
-   "file": "tools/template/.github/workflows/standalone.yml",
+   "file": "tools/template/.github/workflows/package-standalone.yml",
    "line": 18,
    "source": "jfalcou/copacabana",
    "form": "branch",
@@ -283,7 +303,7 @@
   },
   {
    "kind": "image",
-   "file": "tools/template/.github/workflows/standalone.yml",
+   "file": "tools/template/.github/workflows/package-standalone.yml",
    "line": 21,
    "source": "ghcr.io/jfalcou/compilers",
    "form": "tag",

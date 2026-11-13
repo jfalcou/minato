@@ -294,7 +294,7 @@
   {
    "kind": "cpm",
    "file": "test/integration/cpm-test/CMakeLists.txt",
-   "line": 18,
+   "line": 19,
    "source": "jfalcou/spy",
    "form": "variable",
    "current": "${GIT_BRANCH}",
