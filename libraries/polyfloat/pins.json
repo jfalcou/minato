@@ -1,5 +1,5 @@
 {
- "pull": "https://github.com/jfalcou/polyfloat/pull/95",
+ "pull": "https://github.com/jfalcou/polyfloat/pull/106",
  "pins": [
   {
    "kind": "matrix",
@@ -20,6 +20,26 @@
    "current": "v11",
    "latest": "v11",
    "status": "current"
+  },
+  {
+   "kind": "image",
+   "file": ".github/workflows/benchmarks.yml",
+   "line": 24,
+   "source": "ghcr.io/jfalcou/compilers",
+   "form": "tag",
+   "current": "v11",
+   "latest": "v11",
+   "status": "current"
+  },
+  {
+   "kind": "uses",
+   "file": ".github/workflows/benchmarks.yml",
+   "line": 38,
+   "source": "jfalcou/copacabana",
+   "form": "branch",
+   "current": "main",
+   "latest": "main",
+   "status": "fixed"
   },
   {
    "kind": "uses",
@@ -162,33 +182,43 @@
    "status": "current"
   },
   {
+   "kind": "image",
+   "file": ".github/workflows/integration.yml",
+   "line": 30,
+   "source": "ghcr.io/jfalcou/compilers",
+   "form": "tag",
+   "current": "v11",
+   "latest": "v11",
+   "status": "current"
+  },
+  {
    "kind": "cpm",
    "file": "cmake/dependencies.cmake",
-   "line": 19,
+   "line": 43,
    "source": "jfalcou/copacabana",
    "form": "sha",
-   "current": "064ed5a324ac0fb2629c2a5953b83aac9f9436a5",
-   "latest": "d055131cbcc563e502321991b590d6682c6a8b3c",
+   "current": "d055131cbcc563e502321991b590d6682c6a8b3c",
+   "latest": "bcdabc217a7a4405a959e054ac774ad9b494ed00",
    "status": "behind"
   },
   {
    "kind": "cpm",
    "file": "cmake/dependencies.cmake",
-   "line": 24,
+   "line": 48,
    "source": "jfalcou/tts",
    "form": "sha",
-   "current": "4ac6e558e767c0df56f59a132873d1873d6023ba",
-   "latest": "e6b227c61634e4ec56b3b7ffd4a224a84f3f5c14",
+   "current": "e6b227c61634e4ec56b3b7ffd4a224a84f3f5c14",
+   "latest": "0882d30b14e317d2fa2a0483b716a743ed6cc293",
    "status": "behind"
   },
   {
    "kind": "cpm",
    "file": "cmake/dependencies.cmake",
-   "line": 30,
+   "line": 54,
    "source": "jfalcou/eve",
    "form": "sha",
-   "current": "960b6c447ea525be2382ccb5262f87edcfce4550",
-   "latest": "1d4b1906c5192313ac5aadfdd381aa5d2eded3d7",
+   "current": "1d4b1906c5192313ac5aadfdd381aa5d2eded3d7",
+   "latest": "a1e311304a14d188c2ff37c44008094c991b9fbd",
    "status": "behind"
   },
   {

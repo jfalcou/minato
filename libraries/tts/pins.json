@@ -1,5 +1,5 @@
 {
- "pull": "https://github.com/jfalcou/tts/pull/275",
+ "pull": "https://github.com/jfalcou/tts/pull/281",
  "pins": [
   {
    "kind": "matrix",
@@ -222,6 +222,16 @@
    "status": "current"
   },
   {
+   "kind": "image",
+   "file": ".github/workflows/integration.yml",
+   "line": 29,
+   "source": "ghcr.io/jfalcou/compilers",
+   "form": "tag",
+   "current": "v11",
+   "latest": "v11",
+   "status": "current"
+  },
+  {
    "kind": "uses",
    "file": ".github/workflows/package-standalone.yml",
    "line": 17,
@@ -244,11 +254,11 @@
   {
    "kind": "cpm",
    "file": "cmake/dependencies.cmake",
-   "line": 15,
+   "line": 27,
    "source": "jfalcou/copacabana",
    "form": "sha",
-   "current": "064ed5a324ac0fb2629c2a5953b83aac9f9436a5",
-   "latest": "d055131cbcc563e502321991b590d6682c6a8b3c",
+   "current": "d055131cbcc563e502321991b590d6682c6a8b3c",
+   "latest": "bcdabc217a7a4405a959e054ac774ad9b494ed00",
    "status": "behind"
   },
   {

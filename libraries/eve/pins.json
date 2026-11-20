@@ -4,7 +4,7 @@
   {
    "kind": "image",
    "file": ".github/workflows/ci-cycle.yml",
-   "line": 52,
+   "line": 75,
    "source": "ghcr.io/jfalcou/compilers",
    "form": "tag",
    "current": "v10",
@@ -14,17 +14,17 @@
   {
    "kind": "uses",
    "file": ".github/workflows/ci-cycle.yml",
-   "line": 55,
+   "line": 78,
    "source": "jfalcou/copacabana",
    "form": "sha",
    "current": "95054d7b00a79414ec717fdf0b770f7c9338b789",
-   "latest": "d055131cbcc563e502321991b590d6682c6a8b3c",
+   "latest": "bcdabc217a7a4405a959e054ac774ad9b494ed00",
    "status": "behind"
   },
   {
    "kind": "image",
    "file": ".github/workflows/compile-cost.yml",
-   "line": 43,
+   "line": 48,
    "source": "ghcr.io/jfalcou/compilers",
    "form": "tag",
    "current": "v10",
@@ -54,7 +54,7 @@
   {
    "kind": "image",
    "file": ".github/workflows/documentation.yml",
-   "line": 45,
+   "line": 68,
    "source": "ghcr.io/jfalcou/compilers",
    "form": "tag",
    "current": "v10",
@@ -64,7 +64,7 @@
   {
    "kind": "image",
    "file": ".github/workflows/documentation.yml",
-   "line": 79,
+   "line": 108,
    "source": "ghcr.io/jfalcou/compilers",
    "form": "tag",
    "current": "v10",
@@ -114,7 +114,7 @@
   {
    "kind": "image",
    "file": ".github/workflows/random.yml",
-   "line": 23,
+   "line": 41,
    "source": "ghcr.io/jfalcou/compilers",
    "form": "tag",
    "current": "v10",
@@ -124,7 +124,7 @@
   {
    "kind": "image",
    "file": ".github/workflows/unit-arm.yml",
-   "line": 24,
+   "line": 42,
    "source": "ghcr.io/jfalcou/compilers",
    "form": "tag",
    "current": "v10",
@@ -134,7 +134,7 @@
   {
    "kind": "image",
    "file": ".github/workflows/unit-arm.yml",
-   "line": 78,
+   "line": 99,
    "source": "ghcr.io/jfalcou/compilers",
    "form": "tag",
    "current": "v10",
@@ -144,7 +144,7 @@
   {
    "kind": "image",
    "file": ".github/workflows/unit-avx512.yml",
-   "line": 23,
+   "line": 41,
    "source": "ghcr.io/jfalcou/compilers",
    "form": "tag",
    "current": "v10",
@@ -154,7 +154,7 @@
   {
    "kind": "image",
    "file": ".github/workflows/unit-avx512.yml",
-   "line": 56,
+   "line": 76,
    "source": "ghcr.io/jfalcou/compilers",
    "form": "tag",
    "current": "v10",
@@ -164,7 +164,7 @@
   {
    "kind": "image",
    "file": ".github/workflows/unit-avx512.yml",
-   "line": 83,
+   "line": 105,
    "source": "ghcr.io/jfalcou/compilers",
    "form": "tag",
    "current": "v10",
@@ -174,7 +174,7 @@
   {
    "kind": "image",
    "file": ".github/workflows/unit-modes.yml",
-   "line": 23,
+   "line": 41,
    "source": "ghcr.io/jfalcou/compilers",
    "form": "tag",
    "current": "v10",
@@ -184,7 +184,7 @@
   {
    "kind": "image",
    "file": ".github/workflows/unit-modes.yml",
-   "line": 59,
+   "line": 81,
    "source": "ghcr.io/jfalcou/compilers",
    "form": "tag",
    "current": "v10",
@@ -194,7 +194,7 @@
   {
    "kind": "image",
    "file": ".github/workflows/unit-modes.yml",
-   "line": 122,
+   "line": 154,
    "source": "ghcr.io/jfalcou/compilers",
    "form": "tag",
    "current": "v10",
@@ -204,7 +204,7 @@
   {
    "kind": "image",
    "file": ".github/workflows/unit-modes.yml",
-   "line": 208,
+   "line": 253,
    "source": "ghcr.io/jfalcou/compilers",
    "form": "tag",
    "current": "v10",
@@ -214,7 +214,7 @@
   {
    "kind": "image",
    "file": ".github/workflows/unit-modes.yml",
-   "line": 270,
+   "line": 325,
    "source": "ghcr.io/jfalcou/compilers",
    "form": "tag",
    "current": "v10",
@@ -224,7 +224,7 @@
   {
    "kind": "image",
    "file": ".github/workflows/unit-ppc-riscv.yml",
-   "line": 24,
+   "line": 42,
    "source": "ghcr.io/jfalcou/compilers",
    "form": "tag",
    "current": "v10",
@@ -234,7 +234,7 @@
   {
    "kind": "image",
    "file": ".github/workflows/unit-ppc-riscv.yml",
-   "line": 64,
+   "line": 85,
    "source": "ghcr.io/jfalcou/compilers",
    "form": "tag",
    "current": "v10",
@@ -244,7 +244,7 @@
   {
    "kind": "image",
    "file": ".github/workflows/unit-x86.yml",
-   "line": 23,
+   "line": 41,
    "source": "ghcr.io/jfalcou/compilers",
    "form": "tag",
    "current": "v10",
@@ -254,7 +254,7 @@
   {
    "kind": "image",
    "file": ".github/workflows/unit-x86.yml",
-   "line": 59,
+   "line": 79,
    "source": "ghcr.io/jfalcou/compilers",
    "form": "tag",
    "current": "v10",
@@ -264,7 +264,7 @@
   {
    "kind": "image",
    "file": ".github/workflows/unit-x86.yml",
-   "line": 89,
+   "line": 111,
    "source": "ghcr.io/jfalcou/compilers",
    "form": "tag",
    "current": "v10",
@@ -274,7 +274,7 @@
   {
    "kind": "image",
    "file": ".github/workflows/unit-x86.yml",
-   "line": 118,
+   "line": 142,
    "source": "ghcr.io/jfalcou/compilers",
    "form": "tag",
    "current": "v10",

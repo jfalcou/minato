@@ -212,6 +212,16 @@
    "status": "current"
   },
   {
+   "kind": "image",
+   "file": ".github/workflows/integration.yml",
+   "line": 29,
+   "source": "ghcr.io/jfalcou/compilers",
+   "form": "tag",
+   "current": "v11",
+   "latest": "v11",
+   "status": "current"
+  },
+  {
    "kind": "uses",
    "file": ".github/workflows/package-standalone.yml",
    "line": 17,
@@ -234,7 +244,7 @@
   {
    "kind": "cpm",
    "file": "cmake/dependencies.cmake",
-   "line": 18,
+   "line": 41,
    "source": "jfalcou/copacabana",
    "form": "branch",
    "current": "main",
@@ -244,7 +254,7 @@
   {
    "kind": "cpm",
    "file": "cmake/dependencies.cmake",
-   "line": 24,
+   "line": 47,
    "source": "jfalcou/tts",
    "form": "branch",
    "current": "main",

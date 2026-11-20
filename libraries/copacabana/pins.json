@@ -2,6 +2,26 @@
  "pull": null,
  "pins": [
   {
+   "kind": "image",
+   "file": ".github/actions/image/Dockerfile",
+   "line": 9,
+   "source": "ghcr.io/jfalcou/compilers",
+   "form": "tag",
+   "current": "v11",
+   "latest": "v11",
+   "status": "current"
+  },
+  {
+   "kind": "image",
+   "file": ".github/actions/image/action.yml",
+   "line": 42,
+   "source": "ghcr.io/jfalcou/compilers",
+   "form": "tag",
+   "current": "v11",
+   "latest": "v11",
+   "status": "current"
+  },
+  {
    "kind": "matrix",
    "file": ".github/matrices/linux.yml",
    "line": 8,
@@ -127,6 +147,16 @@
    "line": 19,
    "source": "ghcr.io/jfalcou/compilers",
    "form": "tag",
+   "current": "v11",
+   "latest": "v11",
+   "status": "current"
+  },
+  {
+   "kind": "matrix",
+   "file": "tools/template/.github/matrices/linux.yml",
+   "line": 20,
+   "source": "ghcr.io/jfalcou/compilers",
+   "form": "tag",
    "current": "sycl-v1",
    "latest": "sycl-v1",
    "status": "current"
@@ -134,7 +164,7 @@
   {
    "kind": "matrix",
    "file": "tools/template/.github/matrices/linux.yml",
-   "line": 20,
+   "line": 21,
    "source": "ghcr.io/jfalcou/compilers",
    "form": "tag",
    "current": "sycl-v1",
@@ -292,6 +322,16 @@
    "status": "current"
   },
   {
+   "kind": "image",
+   "file": "tools/template/.github/workflows/integration.yml",
+   "line": 31,
+   "source": "ghcr.io/jfalcou/compilers",
+   "form": "tag",
+   "current": "v11",
+   "latest": "v11",
+   "status": "current"
+  },
+  {
    "kind": "uses",
    "file": "tools/template/.github/workflows/package-standalone.yml",
    "line": 18,
@@ -324,7 +364,7 @@
   {
    "kind": "cpm",
    "file": "tools/template/cmake/dependencies.cmake",
-   "line": 18,
+   "line": 41,
    "source": "jfalcou/copacabana",
    "form": "branch",
    "current": "main",
