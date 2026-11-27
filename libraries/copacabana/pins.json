@@ -334,7 +334,7 @@
   {
    "kind": "uses",
    "file": "tools/template/.github/workflows/package-standalone.yml",
-   "line": 18,
+   "line": 19,
    "source": "jfalcou/copacabana",
    "form": "branch",
    "current": "main",
@@ -344,7 +344,7 @@
   {
    "kind": "image",
    "file": "tools/template/.github/workflows/package-standalone.yml",
-   "line": 21,
+   "line": 22,
    "source": "ghcr.io/jfalcou/compilers",
    "form": "tag",
    "current": "v11",

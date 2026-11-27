@@ -1,6 +1,6 @@
 {
- "at": "2026-11-20T20:10:55+00:00",
- "run": "https://github.com/jfalcou/minato/actions/runs/44808685161",
+ "at": "2026-11-27T16:52:05+00:00",
+ "run": "https://github.com/jfalcou/minato/actions/runs/46036957235",
  "libraries": {
   "copacabana": {
    "current": 25,
@@ -20,31 +20,33 @@
   },
   "kumi": {
    "current": 20,
-   "fixed": 17,
-   "behind": 2
+   "behind": 18,
+   "fixed": 1
   },
   "kyosu": {
    "current": 9,
-   "fixed": 11,
-   "behind": 3
+   "behind": 13,
+   "fixed": 1
   },
   "polyfloat": {
    "current": 9,
-   "fixed": 11,
-   "behind": 3
+   "behind": 13,
+   "fixed": 1
   },
   "raberu": {
    "current": 14,
-   "fixed": 13
+   "behind": 12,
+   "fixed": 1
   },
   "spy": {
    "current": 18,
-   "fixed": 13
+   "behind": 12,
+   "fixed": 1
   },
   "tts": {
    "current": 14,
-   "fixed": 12,
-   "behind": 1
+   "behind": 12,
+   "fixed": 1
   }
  }
 }
